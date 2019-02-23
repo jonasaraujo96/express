@@ -6,6 +6,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Conexão com o banco de dados
+const db = require('./config/database');
+db('mongodb://127.0.0.1:27017/express');
+
 var app = express();
 
 app.use(logger('dev'));
